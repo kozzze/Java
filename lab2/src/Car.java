@@ -1,6 +1,6 @@
+import java.util.Comparator;
 
-
-public class Car {
+public class Car implements Vehicle{
     private String brand;
     private int year;
     private double volume;

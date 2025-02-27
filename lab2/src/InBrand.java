@@ -20,4 +20,23 @@ public class InBrand extends Car {
     public String toString() {
         return super.toString() + " Комплектация - " + packageType + " Страховка - " + insurance();
     }
+
+    @Override
+    public void start() {
+        System.out.println(getBrand() + " завелась!");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println(getBrand() + " остановилась.");
+    }
+
+    @Override
+    public void onConditioner(){
+        System.out.println(getBrand() + " - кодиционер вкл");
+    }
+    public void offConditioner(){
+        System.out.println(getBrand() + " - кодиционер выкл");
+    }
+
 }

@@ -12,4 +12,21 @@ public class HomeBrand extends Car {
     public String toString() {
         return super.toString() + " Страховка - " + insurance();
     }
+
+    @Override
+    public void onConditioner(){
+        System.out.println(getBrand() + " - кодиционер вкл");
+    }
+    public void offConditioner(){
+        System.out.println(getBrand() + " - кодиционер выкл");
+    }
+    @Override
+    public void start() {
+        System.out.println(getBrand() + " завелась!");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println(getBrand() + " остановилась.");
+    }
 }

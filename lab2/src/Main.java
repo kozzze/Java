@@ -16,7 +16,7 @@ public class Main {
         Car car9 = new InBrand("Hyundai", 2020, 2.0, "Automatic", 1100, 0.12, 2);
         Car car10 = new HomeBrand("Chevrolet", 2015, 2.5, "Manual", 780, 0.08);
         Car car11 = new InBrand("Ford", 2018, 2.3, "Automatic", 1000, 0.1, 1);
-
+/*
         addUniq(cars, car1);
         addUniq(cars, car2);
         addUniq(cars, car3);
@@ -31,7 +31,10 @@ public class Main {
 
         for (Car car : cars) {
             System.out.println("Страховка - " + calculateInsurance(car));
-        }
+        }*/
+        car1.start();
+        car3.start();
+
     }
 
         private static void addUniq(ArrayList<Car> cars, Car newCar){
