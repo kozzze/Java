@@ -10,21 +10,22 @@ public class ButtonLabel {
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout());
 
-        JButton button1 = new JButton("Кнопка 1");
-        JButton button2 = new JButton("Кнопка 2");
-        JButton button3 = new JButton("Кнопка 3");
-
-        JLabel label1 = new JLabel("Я метка 1");
-        JLabel label2 = new JLabel("Я метка 2");
+        JButton button1 = new JButton("Синий");
+        JButton button2 = new JButton("Крайный");
+        JButton button3 = new JButton("Зеленый");
 
         panel.add(button1);
         panel.add(button2);
         panel.add(button3);
-        panel.add(label1);
-        panel.add(label2);
+
+        button1.addActionListener(new ColorAction(panel, Color.blue));
+        button2.addActionListener(new ColorAction(panel, Color.red));
+        button3.addActionListener(new ColorAction(panel, Color.green));
 
         frame.add(panel);
 
         frame.setVisible(true);
+
+
     }
 }
