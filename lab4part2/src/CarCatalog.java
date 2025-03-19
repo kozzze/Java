@@ -11,7 +11,7 @@ public class CarCatalog extends JFrame {
     private JTextArea carDetails;
 
     public CarCatalog() {
-        setTitle("Каталог автомобилей");
+        setTitle("GorillaCars");
         setSize(800, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());

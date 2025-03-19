@@ -5,13 +5,30 @@ public class DataBase {
     private static final String USER = "kozzze";
     private static final String PASSWORD = "123";
 
-    public static Connection connect() {
+    private static DataBase instance;
+    private Connection connection;
+
+    private DataBase() {
         try {
-            return DriverManager.getConnection(URL, USER, PASSWORD);
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (SQLException e) {
             e.printStackTrace();
-            return null;
         }
+    }
+
+    public static DataBase getInstance() {
+        if (instance == null) {
+            synchronized (DataBase.class) {
+                if (instance == null) {
+                    instance = new DataBase();
+                }
+            }
+        }
+        return instance;
+    }
+
+    public Connection getConnection() {
+        return connection;
     }
 
     public static ResultSet getCars() {
@@ -22,7 +39,7 @@ public class DataBase {
                 "AND active_storage_attachments.record_type = 'Car' " +
                 "JOIN active_storage_blobs ON active_storage_attachments.blob_id = active_storage_blobs.id";
         try {
-            Connection conn = connect();
+            Connection conn = getInstance().getConnection();
             Statement stmt = conn.createStatement();
             return stmt.executeQuery(sql);
         } catch (SQLException e) {
