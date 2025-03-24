@@ -44,7 +44,7 @@ public class CarView extends JFrame {
         carList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (controller != null) { // Проверяем, что контроллер установлен
+                if (controller != null) {
                     controller.onCarSelected((String) carList.getSelectedItem());
                 }
             }
